@@ -1,0 +1,936 @@
+// main: style.less
+
+// Header Section and --XXX
+.section {
+  padding: 80px 0;
+
+  &__header {
+    width: 100%;
+    max-width: 950px;
+    text-align: center;
+    margin: 0 auto 30px;
+  }
+
+  &__suptitle {
+    font-family: 'Kaushan Script';
+    color: @colorBlack;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: 'Myriad Pro';
+    color: @colorBlack;
+    text-transform: uppercase;
+
+    &-text {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: @colorRed;
+    margin: 30px auto;
+  }
+
+  &--records {
+    background-color: @colorBlue;
+  }
+
+  &--device {
+    background: url('../img/design/baground.png') center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding-bottom: 0;
+  }
+
+  &--gray {
+    background-color: #f8f8f8;
+  }
+
+  &--zero {
+    padding: 0;
+    margin-bottom: 80px;
+  }
+
+  &--clients {
+    background: url('../img/clients/background.png') center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding-bottom: 80px;
+  }
+
+  &--map {
+    background: url('../img/map/background.png') center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+}
+
+// ABOUT & Team
+.cards {
+  margin: 0 -15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  &__item {
+    position: relative;
+    width: 33.3%;
+    padding: 0 15px;
+  }
+
+  &__inner {
+    background-color: @colorBlue;
+    margin-bottom: 20px;
+  }
+
+  &__item:hover &__img {
+    transform: translate3d(-10px, -10px, 0);
+  }
+
+  &__item:hover &__text {
+    opacity: 1;
+  }
+
+  &__img {
+    background: linear-gradient(to bottom, #f38181, #fce38a);
+  }
+
+  &__img img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__item:hover img {
+    opacity: .1;
+  }
+
+  &__text {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: @colorWhite;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+
+    //выравниваем текс по центру блока
+    position: absolute;
+    top: 45%;
+    left: 0;
+    z-index: 2;
+    transform: translate3d(0, -50%, 0);
+
+    transition: .5s linear;
+  }
+
+  &__description {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  &__name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: @colorBlack;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  &__prof {
+    font-style: italic;
+    font-weight: 200;
+  }
+}
+
+// Feature
+.feature {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+
+  &__item {
+    text-align: center;
+    width: 20%;
+    border-right: 1px solid #b5eae0;
+    padding: 80px auto;
+
+    h2 {
+      font-family: 'Myriad Pro';
+      font-weight: bold;
+      color: @colorWhite;
+      margin: 80px 0 10px;
+    }
+
+    p {
+      font-family: 'Myriad Pro';
+      font-size: 14px;
+      color: @colorWhite;
+      margin-bottom: 80px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__item:last-child {
+    border-right: none;
+  }
+}
+
+// services
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  &__item {
+    width: 33.3%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px;
+
+    h4 {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: @colorBlack;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    &--border {
+      border-bottom: 1px solid #e5e5e5;
+    }
+  }
+
+  &__item img {
+    margin-right: 20px;
+  }
+}
+
+//design
+.design {
+  display: block;
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.phone {
+  position: absolute;
+  right: -35px;
+  bottom: -90px;
+}
+
+//work
+.work {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  &__item {
+    width: 50%;
+  }
+
+  &__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;
+  }
+}
+
+// Работа с аккардионном (разворот и скрытие делаем на js)
+.accordion {
+  &__item {
+    border: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+  }
+
+  &__item.active &__content {
+    display: block;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e5e5e5;
+    cursor: pointer;
+  }
+
+  // стрелкa вверx
+  &__header::after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    border-top: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    z-index: 1;
+
+    transform: translateY(-50%) rotate(135deg);
+  }
+
+  // стрелкa вниз
+  &__item.active &__header::after {
+    position: absolute;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  &__title {
+    margin-left: 15px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    color: @colorBlack;
+  }
+
+  &__content {
+    display: none;
+    padding: 15px 20px;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 15px;
+  }
+}
+
+//quote
+.quote {
+  padding: 80px 0;
+
+  &__item {
+    position: relative;
+    padding-left: 245px;
+    height: 210px;
+    margin: 0 100px;
+  }
+
+  &__icon img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 210px;
+    height: 210px;
+  }
+
+  &__text {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: lighter;
+    margin-bottom: 20px;
+  }
+
+  &__author {
+    font-family: 'Kaushan Script';
+    font-size: 24px;
+    color: @colorBlack;
+  }
+
+  &__author::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 3px;
+    background-color: @colorRed;
+    margin-right: 10px;
+  }
+
+  &--zero {
+    padding: 20px;
+  }
+}
+
+.quote .slick-slider {
+  padding: 0 110px;
+}
+
+// Стрелка влево и вправо
+.slick-arrow {
+  display: block;
+  font-size: 0;
+  color: transparent;
+
+  border: 0;
+  background: none;
+
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  transform: translate(-50%);
+  
+  cursor: pointer;
+}
+
+.slick-prev {
+  left: 0;
+  transform: rotate(-45deg);
+}
+
+.slick-next {
+  right: 0;
+  transform: rotate(135deg);
+}
+
+.slick-arrow::after {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  border-top: 2px solid #ccc;
+  border-left: 2px solid #ccc;
+}
+
+.media {
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    width: 50px;
+    height: 50px;
+    background-color: #fce38a;
+    border-right: 1px solid #f38181;
+    color: #f38181;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 12px 10px;
+    line-height: 1;
+
+    transition: background .1s linear;
+  }
+
+  &__item:hover {
+    color: @colorWhite;
+    background-color: #f38181;
+  }
+
+  &__item:last-child {
+    border-right: none;
+  }
+}
+
+//logotypes
+.logotypes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// our works
+.works {
+  display: flex;
+
+  &__col {
+    flex: 1 1 0;
+  }
+
+  &__item {
+    position: relative;
+    background: linear-gradient(to bottom, #f38181, #fce38a);
+  }
+
+  &__item:hover &__img {
+    opacity: 0.1;
+  }
+
+  &__item:hover &__info {
+    opacity: 1;
+  }
+
+  &__img {
+    display: block;
+    transition: opacity .2s linear;
+    width: 100%;
+  }
+
+  &__info {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    z-index: 0;
+
+    transform: translate3d(0, -50%, 0);
+
+    opacity: 0;
+    transition: opacity 0.2s linear;
+  }
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: @colorWhite;
+    margin: 10px auto;
+  }
+
+  &__text {
+    font-style: italic;
+    font-weight: lighter;
+    color: @colorWhite;
+  }
+}
+
+// clients
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    width: 50%;
+    padding: 40px;
+  }
+
+  &__img {
+    margin-right: 20px;
+  }
+
+  &__name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: @colorBlack;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__prof {
+    color: @colorBlack;
+    font-style: italic;
+    font-weight: lighter;
+  }
+
+  &__prof::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: @colorRed;
+    margin: 10px 0;
+  }
+}
+
+// blog
+.blog {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  &__item {
+    width: 32%;
+    text-decoration: none;
+    color: #999999;
+  }
+
+  &__header {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  &__photo {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__date {
+    position: absolute;
+    left: -10px;
+    bottom: 10px;
+
+    background-color: @colorBlue;
+    color: @colorWhite;
+    padding: 10px 15px;
+    font-weight: 200;
+    font-style: italic;
+    text-align: center;
+
+    &-day {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      font-style: normal;
+      line-height: 1;
+    }
+  }
+
+  &__content {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: @colorBlack;
+    margin-bottom: 10px;
+  }
+
+  &__footer {
+    font-style: italic;
+    font-weight: 200;
+  }
+}
+
+// map 
+.map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: @colorRed;
+  font-size: 24px;
+  text-decoration: none;
+  padding: 5px;
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    color: @colorRed;
+  }
+
+  &__title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: @colorRed;
+    margin: 10px auto;
+  }
+}
+
+// laptop ver
+@media (max-width: 1200px) {
+
+  // Header Section and --XXX
+  .section {
+    padding: 40px 0;
+
+    &__header {
+      margin-bottom: 20px;
+    }
+
+    &--device {
+      padding-bottom: 0;
+    }
+  }
+
+  // services
+  .services {
+    padding-bottom: 40px;
+
+    &__item {
+      width: 50%;
+      justify-content: flex-start;
+      padding-bottom: 0;
+
+      &--border {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .phone {
+    bottom: -60px;
+  }
+
+  //quote
+  .quote {
+    &__text {
+      font-size: 20px;
+    }
+
+    &__author {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 990px) {
+
+  //Records
+  .feature {
+    justify-content: center;
+
+    &__item {
+      flex: none;
+      width: 33.3%;
+      padding: 20px auto;
+
+      border: 0;
+
+      h2 {
+        margin: 20px 0 10px;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  //quote
+  .quote {
+    &__item {
+      padding-left: 180px;
+    }
+
+    &__icon img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .quote .slick-slider {
+    padding: 0 20px;
+  }
+
+  .slick-arrow {
+    top: 30%
+  }
+
+  //logotypes
+  .logotypes__item {
+    width: 30%;
+  }
+
+  // clients
+  .clients {
+    &__item {
+      width: 100%;
+    }
+  }
+
+  // blog
+  .blog {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__item {
+      max-width: 380px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+// mobile ver
+@media (max-width: 770px) {
+  .section {
+    padding: 20px 0;
+
+    &__suptitle {
+      font-size: 20px;
+    }
+
+    &__title {
+      font-size: 24px;
+
+      &-text {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__title::after {
+      margin: 20px auto;
+    }
+
+    &--device {
+      padding-bottom: 0;
+    }
+  }
+
+  // ABOUT & Team
+  .cards {
+    justify-content: center;
+
+    &__item {
+      max-width: 410px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  // services
+  .services {
+    justify-content: center;
+    padding-bottom: 20px;
+
+    &__item {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px 0;
+    }
+  }
+
+  //Service 
+  .work {
+    &__img {
+      display: none;
+    }
+
+    &__item {
+      width: 100%;
+    }
+  }
+
+  //quote
+  .quote {
+    &__item {
+      margin: 0 20px;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    &__icon img {
+      display: block;
+      position: static;
+      margin: 0 auto 20px;
+      margin-bottom: 20px;
+    }
+
+    &__text {
+      font-size: 16px;
+    }
+  }
+
+  .quote .slick-slider {
+    padding: 0;
+  }
+
+  //logotypes
+  .logotypes__item {
+    width: 45%;
+  }
+
+  // our works
+  .works {
+    flex-wrap: wrap;
+
+    &__col {
+      flex: none;
+      width: 50%;
+    }
+  }
+
+  // clients
+  .clients {
+    &__item {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    &__img {
+      margin: 0 auto 20px;
+    }
+
+    &__prof::after {
+      margin: 10px auto;
+    }
+  }
+
+  //Design
+  .tablet {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .phone {
+    left: 300px;
+    bottom: -50px;
+  }
+}
+
+// mobile ver
+@media (max-width: 575px) {
+
+  //section
+  .section {
+    &__header {
+      max-width: 300px;
+    }
+  }
+
+  //services
+  .services {
+    &--device {
+      padding-bottom: 0;
+    }
+  }
+
+  //Records
+  .feature {
+    &__item {
+      width: 100%;
+
+      border-bottom: 1px solid #b5eae0;
+    }
+
+    &__item:last-child {
+      border-bottom: none;
+    }
+  }
+
+  //Design
+  .design {
+    max-width: 500px;
+  }
+
+  .tablet {
+    width: 280px;
+  }
+
+  .phone {
+    width: 130px;
+    left: 170px;
+    bottom: -30px;
+  }
+
+  .quote {
+    &__item {
+      margin: 0;
+    }
+  }
+
+  // Стрелка влево и вправо
+  .slick-arrow {
+    top: 30%
+  }
+
+  // our works
+  .works {
+    &__col {
+      width: 100%;
+    }
+  }
+}

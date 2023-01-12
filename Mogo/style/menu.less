@@ -1,0 +1,99 @@
+// main: style.less
+
+// Бургер меню
+.nav-toggle {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  z-index: 1;
+
+  font-size: 0;
+  color: transparent;
+  border: 0;
+  background: none;
+  width: 30px;
+  padding: 10px 0;
+
+  cursor: pointer;
+
+  &.active &__item {
+    background: none;
+  }
+
+  &.active &__item::before {
+    transform: rotate(45deg) translateX(-3px);
+    transform-origin: left top;
+  }
+
+  &.active &__item::after {
+    transform: rotate(-45deg) translateX(-3px);
+    transform-origin: left bottom;
+  }
+
+  &__item {
+    display: none;
+    width: 100%;
+    height: 3px;
+    background-color: @colorWhite;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+
+    transition: background .2s linear;
+  }
+
+  &__item::before, 
+  &__item::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: @colorWhite;
+
+    transition: transform .2s linear;
+
+    position: absolute;
+    left: 0;
+    z-index: 1;
+  }
+
+  &__item::before {
+    top: -8px;
+  }
+
+  &__item::after {
+    bottom: -8px;
+  }
+}
+
+//tablet ver 
+@media (max-width: 990px) {
+  .nav {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    background-color: #eb8b8d ;
+  }
+
+  .nav.active {
+    display: block;
+  }
+
+  .nav__item {
+    display: block;
+    margin: 0;
+    padding: 5px 20px;
+  }
+
+  .nav-toggle {
+    &__item {
+      display: block;
+    }
+  }
+}

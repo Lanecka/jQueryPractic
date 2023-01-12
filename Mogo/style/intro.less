@@ -1,0 +1,103 @@
+// main: style.less
+
+.intro {
+  max-width: 100%;
+  height: 100vh;
+  background: url('../img/introBg.png') center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: @colorWhite;
+  min-height: 740px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  &__inner {
+    width: 100%;
+    max-width: 800px;
+    font-family: 'Myriad Pro';
+    margin: 80px auto;
+    text-align: center;
+  }
+
+  &__suptitle {
+    font-family: 'Kaushan Script';
+    margin-bottom: 20px;
+  }
+
+  //Сoздание черточки после заголовка
+  &__title::after {
+    content: '';
+    display: block;
+    width: 20%;
+    height: 3px;
+    background-color: @colorWhite;
+    margin: 20px auto 50px;
+  }
+}
+
+.slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 60px;
+    color: @colorWhite;
+  }
+
+  &__item {
+    position: relative;
+    width: 20%;
+    text-transform: uppercase;
+    font-family: 'Myriad Pro';
+    font-size: 18px;
+    border-top: 3px solid @colorWhite;
+    padding: 20px 0;
+    opacity: 0.7;
+
+    &-number {
+      font-weight: bold;
+      font-size: 24px;
+    }
+  }
+
+  &__item.active {
+    opacity: 1;
+  }
+
+  // Красная линия у активного элемента
+  &__item.active::before {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 3px;
+    background-color: @colorRed;
+
+    position: absolute;
+    top: -3px;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+// tablet ver
+@media (max-width: 990px) {
+  .slider__item-text {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .intro {
+    min-height: 420px;
+  }
+}

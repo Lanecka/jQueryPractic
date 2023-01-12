@@ -1,0 +1,68 @@
+// main: style.less
+
+.header {
+  margin-top: 0;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: @colorWhite;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-family: 'Kaushan Script';
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: @colorRed;
+    padding: 10px 0;
+
+    transform: translate3d(0, 0, 0);
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+  }
+
+  &.active {
+    background-color: @colorRed;
+  }
+}
+
+.nav__item {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 20px;
+  color: @colorWhite;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  padding-block: 10px;
+}
+
+.nav__item:last-child {
+  margin-right: 0;
+}
+
+.nav__item:hover {
+  color: @colorYellow;
+  border-bottom: 3px solid @colorYellow;
+  padding-block: 10px;
+}
+
+.nav__item.active {
+  color: @colorYellow;
+  border-bottom: 3px solid @colorYellow;
+  padding-block: 10px;
+}

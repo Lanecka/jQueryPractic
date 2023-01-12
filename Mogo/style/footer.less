@@ -1,0 +1,294 @@
+// main: style.less
+
+.footer {
+  padding: 80px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__col {
+    &--first {
+      width: 40%;
+    }
+
+    &--second {
+      width: 30%;
+    }
+
+    &--third {
+      width: 24%;
+    }
+  }
+
+  &__logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 46px;
+    color: #cccccc;
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 50px;
+  }
+
+  &__social {
+    margin-bottom: 25px;
+
+    &-header {
+      color: @colorBlack;
+    }
+
+    &-header b {
+      font-size: 18px;
+    }
+
+    &-header::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #cccccc;
+      margin: 20px auto;
+    }
+
+    &-content {
+      display: flex;
+      font-style: italic;
+      font-weight: 200;
+    }
+
+    &-content a {
+      text-decoration: none;
+      color: @colorBlue;
+      margin: 0 8px;
+      font-size: 18px;
+    }
+
+    &-content a:hover {
+      color: @colorRed;
+    }
+  }
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: @colorBlack;
+    margin: 20px 0 30px;
+  }
+
+  &__templat {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: @colorBlack;
+  }
+
+  &__templat::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #cccccc;
+    margin: 60px 0 20px;
+  }
+
+  &__place {
+    font-family: 'Montserrat', sans-serif;
+    color: #f38181;
+    text-decoration: none;
+  }
+}
+
+/*BLOGS*/
+.blogs {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__img {
+    margin-right: 20px;
+  }
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: @colorBlack;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  &__date {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 200;
+  }
+}
+
+/*instagram*/
+.instagram {
+  &__address {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 200;
+    color: #999999;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+}
+
+/*FORM*/
+.subscribe {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+
+  &__input {
+    width: 60%;
+    height: 40px;
+    padding: 10px;
+    font-style: italic;
+    border: 1px solid #e7e7e7;
+    border-right: 0;
+    line-height: 1.5;
+    color: @colorBlack;
+  }
+
+  &__input::placeholder {
+    color: #cccccc;
+  }
+
+  &__input:focus {
+    outline: 0;
+    border-color: @colorBlue;
+  }
+
+  &__btn {
+    width: 40%;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: @colorBlue;
+    color: @colorWhite;
+    border: none;
+    padding: 10px 30px;
+
+    cursor: pointer;
+    transition: background 0.2s linear;
+  }
+
+  &__btn:hover {
+    background-color: @colorRed;
+  }
+
+  &__btn:focus {
+    outline: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+
+  .footer {
+    padding: 40px 0;
+
+    &__logo {
+    margin-bottom: 20px;
+    }
+
+    &__inner {
+      flex-wrap: wrap;
+    }
+
+    &__col {
+      &--first {
+        width: 100%;
+      }
+
+      &--second {
+        width: 40%;
+      }
+
+      &--third {
+        width: 30%;
+      }
+    }
+
+    &__templat::before {
+      margin: 40px 0 20px;
+    }
+  }
+}
+
+@media (max-width: 946px) {
+  .footer {
+
+    &__text {
+      margin-bottom: 20px;
+    }
+
+    &__col {
+      &--second {
+        width: 45%;
+      }
+
+      &--third {
+        width: 40%;
+      }
+    }
+  }
+}
+
+@media (max-width: 770px) {
+
+  .footer {
+    padding: 20px 0;
+
+    &__social {
+      &-content {
+        flex-direction: column;
+      }
+
+      &-content div {
+        margin-bottom: 10px;
+      }
+
+      &-content a {
+        margin: 0 5px;
+      }
+
+      &-content a:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &__col {
+      &--second {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      &--third {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  }
+
+  .subscribe {
+    &__btn {
+      font-size: 12px;
+      padding: 10px 15px;
+    }
+  }
+}
